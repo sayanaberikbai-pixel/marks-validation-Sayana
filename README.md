@@ -14,72 +14,55 @@ marks-validation/
 ├── task_13.py         # Bar-диаграмма → PNG
 ├── task_14.py         # Flask API: POST CSV → JSON
 └── README.md
-```
 
----
 
 ## Задачи
 
 ### Задача 9 — NumPy маски
 Загружает `points` в `float`-массив NumPy, строит три маски и возвращает индексы плохих строк.
 
-```bash
+bash
 python task_09.py
-```
 
-```
 NaN-индексы (11): [5, 25, 78, ...]
 Вне [0,100] (15): [3, 4, 6, ...]
 Все плохие  (26): [3, 4, 5, 6, ...]
-```
 
----
 
 ### Задача 10 — Подсчёт
 На том же массиве считает хорошие и плохие строки.
 
-```bash
+bash
 python task_10.py
-```
 
-```
 Хороших строк : 174
 Плохих строк  : 26
-```
 
----
 
 ### Задача 11 — DataFrame + колонка `ok`
 Добавляет булеву колонку `ok` и выводит первые 10 нарушений.
 
 ```bash
 python task_11.py
-```
 
-```
     points     ok
 3    200.0  False
 4    150.0  False
 5      NaN  False
-...
-```
 
----
 
 ### Задача 12 — Сохранение чистого файла
 Фильтрует DataFrame, оставляет только валидные строки → `marks_clean.csv`.
 
-```bash
+bash
 python task_12.py
-```
 
----
 
 ### Задача 13 — Bar-диаграмма
 
-```bash
+bash
 python task_13.py
-```
+
 
 Сохраняет `marks_chart.png`:
 
@@ -89,35 +72,33 @@ python task_13.py
 
 ### Задача 14 — Flask API
 
-```bash
+bash
 pip install flask pandas
 python task_14.py
-```
+
 
 **Эндпоинт:** `POST /validate`  
 **Тело:** `multipart/form-data`, поле `file` — CSV-файл
 
-```bash
+bash
 curl -X POST http://localhost:5000/validate \
      -F "file=@marks.csv"
-```
+
 
 **Ответ:**
 
-```json
+json
 {
   "valid_count": 174,
   "invalid_count": 26,
   "error_indices": [3, 4, 5, 6, 16, 17, 21, 25, 78, 82,
                     96, 113, 120, 135, 140, 141, 142, 144, 146, 147]
 }
-```
 
----
 
 ## Установка зависимостей
 
-```bash
+bash
 pip install numpy pandas matplotlib flask
-```
+
 
