@@ -2,11 +2,7 @@
 
 Сквозной проект: валидация колонки `points` — значения от **0 до 100**, без `NaN`.
 
----
-
 ## Структура проекта
-
-```
 marks-validation/
 ├── marks.csv          # Исходный файл с данными
 ├── marks_clean.csv    # Только валидные строки (результат задачи 12)
@@ -125,6 +121,3 @@ curl -X POST http://localhost:5000/validate \
 pip install numpy pandas matplotlib flask
 ```
 
-## Автор
-
-Учебный проект — обработка и валидация данных с помощью NumPy, pandas, matplotlib и Flask.
